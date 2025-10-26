@@ -1,0 +1,45 @@
+/* Genel container genişliği */
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Logo görseli */
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Bilgi kartları animasyonlu */
+.clickable-card {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+.clickable-card:hover {
+    transform: scale(1.02);
+}
+
+/* İkon döndürme animasyonu */
+.transition-icon {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+}
+.rotate-up {
+    transform: rotate(180deg);
+}
+
+/* Grafikler için taşmayı engelle */
+.grafik-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Mobilde filtre elemanlarının tam genişlik alması */
+@media (max-width: 576px) {
+    #klasman, #sporcu {
+        width: 100% !important;
+    }
+}

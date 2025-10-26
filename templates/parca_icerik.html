@@ -1,0 +1,67 @@
+<!-- Bilgi Kartları -->
+<div class="row mb-4">
+    <div class="col-md-6 mb-3">
+        <div class="card clickable-card text-center bg-info text-white" data-bs-toggle="collapse" data-bs-target="#dgkDetayCard">
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-center align-items-center">
+                    DGK Sıranız
+                    <i class="bi bi-caret-down-fill ms-2 transition-icon" id="toggleIconDGK"></i>
+                </h5>
+                <p class="card-text fs-4">{{ dgk_sira }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card clickable-card text-center bg-info text-white" data-bs-toggle="collapse" data-bs-target="#tkDetayCard">
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-center align-items-center">
+                    Türkiye Klasmanı Sıranız
+                    <i class="bi bi-caret-down-fill ms-2 transition-icon" id="toggleIconTK"></i>
+                </h5>
+                <p class="card-text fs-4">{{ tk_sira }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DGK Detay Tablosu -->
+<div class="collapse mt-3" id="dgkDetayCard">
+    <div class="card card-body">
+        <h5 class="card-title mb-3">DGK Performans Özeti</h5>
+        <div class="table-responsive">{{ dgk_tablo | safe }}</div>
+    </div>
+</div>
+
+<!-- TK Detay Tablosu -->
+<div class="collapse mt-3" id="tkDetayCard">
+    <div class="card card-body">
+        <h5 class="card-title mb-3">Türkiye Klasmanı Performans Özeti</h5>
+        <div class="table-responsive">{{ tk_tablo | safe }}</div>
+    </div>
+</div>
+
+<!-- Grafikler -->
+<ul class="nav nav-tabs mt-4" id="grafikTabs" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#genel" type="button">Genel Ortalama</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#enyuksek" type="button">En Yüksek Ortalama</button>
+    </li>
+</ul>
+<div class="tab-content mt-3">
+    <div class="tab-pane fade show active" id="genel">
+        <div class="grafik-container">
+            {{ grafik_1 | safe }}
+        </div>
+    </div>
+    <div class="tab-pane fade" id="enyuksek">
+        <div class="grafik-container">
+            {{ grafik_2 | safe }}
+        </div>
+    </div>
+</div>
+
+<!-- Turnuva Detay Tablosu -->
+<h4 class="mt-5">Turnuva Detayları</h4>
+<div class="table-responsive">{{ tablo | safe }}</div>
